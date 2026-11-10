@@ -103,6 +103,27 @@ dialog{border:0;border-radius:18px;padding:32px;background:var(--surface);color:
 dialog h3{font-size:36px;margin-bottom:16px}dialog .acts{display:flex;gap:12px;margin-top:8px;flex-wrap:wrap}dialog .sm{color:var(--ink);padding:14px 24px;font-size:17px}
 .lnk{background:none;border:0;color:inherit;opacity:.75;text-decoration:underline;font:inherit;cursor:pointer}
 .ok{color:var(--brass);font-weight:700;margin:0;min-height:1.2em}
+.st{padding:4px 12px;border-radius:999px;font-size:14px;font-weight:700;white-space:nowrap}.st.review{background:#f4e3c3;color:#6b4a14}.st.ok{background:#d8ecd8;color:#1f5a2a}.st.rej{background:#f3d3d3;color:#7a1c1c}
+.cabtop{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:32px}.cabtop .lead{margin:0}
+.cabgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px}
+.cc{display:grid;grid-template-columns:104px 1fr;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:16px;animation:pop .6s cubic-bezier(.2,.7,.2,1) both}
+.cc .ph{aspect-ratio:4/5;border-radius:12px;overflow:hidden;background:var(--rose);display:grid;place-items:center;font:600 40px "Cormorant Garamond",serif;color:var(--wine)}.cc .ph img{width:100%;height:100%;object-fit:cover}
+.cc h3{font-size:26px;margin:0 0 6px}.cc .nt{font-size:15px;color:var(--muted);margin:8px 0 12px;line-height:1.45}.cc .acts{display:flex;gap:8px;flex-wrap:wrap}.cc .sm{color:var(--ink);padding:6px 14px;font-size:14px}
+.mod{margin-bottom:48px}.mod h3{font-size:40px;display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.bdg{display:inline-grid;place-items:center;min-width:34px;height:34px;padding:0 10px;border-radius:999px;background:var(--brass);color:#25100a;font:700 17px Manrope,sans-serif}
+.mi{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--brass);border-radius:18px;padding:22px;margin-bottom:20px}
+.mh{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:16px;color:var(--muted)}.mh b{color:var(--ink)}
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:16px}.cmp.one{grid-template-columns:1fr}
+.sd{border:1px solid var(--line);border-radius:14px;padding:16px;background:var(--bg)}.sd.nw{border-color:var(--brass);box-shadow:0 0 0 1px var(--brass)}
+.sl{font-weight:700;margin-bottom:12px;color:var(--muted)}.sd.nw .sl{color:var(--brass)}
+.sr{display:grid;grid-template-columns:96px 1fr;gap:16px}.sp{aspect-ratio:4/5;border-radius:10px;overflow:hidden;background:var(--rose);display:grid;place-items:center;font:600 36px "Cormorant Garamond",serif;color:var(--wine)}.sp img{width:100%;height:100%;object-fit:cover}
+.ln{display:flex;justify-content:space-between;gap:10px;padding:6px 8px;border-radius:8px;font-size:16px}.ln span{color:var(--muted)}
+.chg{background:rgba(184,137,74,.25);outline:2px solid var(--brass)}
+.tag{display:inline-block;margin-top:8px;padding:2px 10px;border-radius:999px;background:var(--wine);color:var(--on-wine);font-size:13px}
+.macts{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;align-items:center}.macts input{flex:1;min-width:180px;padding:12px 14px;font-size:16px}.macts .btn{padding:12px 26px;font-size:16px}.macts .sm{color:var(--ink);padding:12px 22px;font-size:16px}
+.edbar{display:flex;justify-content:space-between;align-items:center;gap:12px;background:var(--rose);color:#2a0f18;border-radius:12px;padding:10px 16px;font-weight:600}.edbar[hidden]{display:none}.edbar .sm{color:#2a0f18}
+label.chk{display:flex;gap:10px;align-items:flex-start;font-size:16px;color:var(--ink)}label.chk[hidden]{display:none}.chk input{width:auto;margin-top:5px}
+@media (max-width:820px){.cmp{grid-template-columns:1fr}.cabgrid{grid-template-columns:1fr}}
 footer{background:var(--wine);color:var(--on-wine);padding:40px 0}
 footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:16px}
 @media (max-width:820px){.hero .wrap,.reg .wrap{grid-template-columns:1fr;gap:40px}.steps{grid-template-columns:1fr}.portrait figcaption{left:12px}header nav a:not(.login){display:none}header nav a.login{margin-left:0;padding:10px 16px;font-size:15px}.lang{margin-left:0}.bar{flex-wrap:wrap}.btn.ghost{margin:12px 0 0}.row{grid-template-columns:1fr}section{padding:72px 0}.clients .wrap{grid-template-columns:1fr;gap:28px}.contacts .grid{grid-template-columns:1fr}.contacts a.row2 b{font-size:19px}}
@@ -127,11 +148,60 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 .portrait img{box-shadow:0 30px 60px -20px rgba(0,0,0,.45)}
 @media (prefers-reduced-motion:reduce){.js header .bar,.js .hero *,.js .rv{animation:none!important;transition:none!important;opacity:1!important;transform:none!important}}
 
+/* ===== polish v3 ===== */
+::selection{background:var(--brass);color:#25100a}
+body{-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:60;background:rgba(74,20,36,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(247,239,236,.1)}
+header .bar{padding:14px 32px}
+.logo{background:linear-gradient(135deg,#1b1215,#2c1a21);border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.35);border:1px solid rgba(184,137,74,.35)}
+.logo small{color:var(--brass)}
+header nav a{position:relative}
+header nav a:not(.login)::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;background:var(--brass);transform:scaleX(0);transition:transform .3s ease}
+header nav a:not(.login):hover::after{transform:scaleX(1)}
+.hero{position:relative;overflow:hidden;padding:72px 0 140px;background:radial-gradient(900px 500px at 85% 10%,rgba(184,137,74,.22),transparent 60%),radial-gradient(700px 500px at 0% 100%,rgba(233,201,195,.12),transparent 60%),linear-gradient(160deg,#5a1a2e 0%,#3b0f1c 100%)}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:60px;background:linear-gradient(to bottom,transparent,rgba(0,0,0,.12))}
+.hero h1{background:linear-gradient(180deg,#fff 30%,var(--rose));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;padding-bottom:.08em}
+.hero p{opacity:.92}
+.btn{box-shadow:0 10px 24px -8px rgba(184,137,74,.7);background:linear-gradient(135deg,#d3a566,#b8894a)}
+.btn:hover{box-shadow:0 16px 30px -8px rgba(184,137,74,.85)}
+.btn.ghost{background:rgba(255,255,255,.04);box-shadow:none;backdrop-filter:blur(6px)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.portrait::before{content:"";position:absolute;inset:-18px -18px 18px 18px;border:1px solid var(--brass);border-radius:999px 999px 28px 28px;opacity:.6;pointer-events:none}
+.portrait figcaption{border-left:4px solid var(--brass)}
+h2{position:relative;padding-bottom:18px}
+h2::after{content:"";display:block;width:64px;height:3px;border-radius:3px;background:var(--brass);position:absolute;left:0;bottom:0}
+.clients h2::after{background:var(--rose)}
+.cat{box-shadow:0 2px 0 rgba(0,0,0,.03);padding:16px 30px}
+.cat:hover{box-shadow:0 10px 22px -12px rgba(74,20,36,.45)}
+.cat[aria-pressed=true]{box-shadow:0 10px 22px -10px rgba(74,20,36,.6)}
+.steps{border-top:0;gap:20px}
+.steps li{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.steps li:hover{transform:translateY(-6px);border-color:var(--brass);box-shadow:0 22px 40px -22px rgba(74,20,36,.5)}
+.steps p{padding-bottom:4px}
+.reg form{background:var(--bg);border:1px solid var(--line);border-radius:24px;padding:32px;box-shadow:0 30px 60px -40px rgba(74,20,36,.45)}
+input,select{transition:border-color .2s ease,box-shadow .2s ease;border-radius:12px}
+input:focus,select:focus{outline:none;border-color:var(--brass);box-shadow:0 0 0 4px rgba(184,137,74,.2)}
+.card{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.card:hover{transform:translateY(-6px);border-color:var(--brass);box-shadow:0 26px 44px -26px rgba(74,20,36,.55)}
+.card .ph{background:linear-gradient(160deg,var(--rose),#d9a9a0)}
+.cc,.mi{box-shadow:0 14px 30px -24px rgba(74,20,36,.4)}
+.clients{position:relative;overflow:hidden;background:radial-gradient(700px 400px at 100% 0%,rgba(184,137,74,.22),transparent 60%),linear-gradient(160deg,#4a1424,#35101c)}
+.contacts a.row2{transition:padding .25s ease,background .25s ease;border-radius:6px}
+.contacts a.row2:hover{padding-left:14px;padding-right:14px;background:var(--surface)}
+.empty{border-radius:22px}
+dialog{border-radius:24px;box-shadow:0 40px 90px -30px rgba(0,0,0,.6)}
+dialog::backdrop{backdrop-filter:blur(4px)}
+footer{border-top:3px solid var(--brass)}
+.lang button{transition:background .25s ease,color .25s ease}
+.lang button:hover{background:rgba(247,239,236,.15)}
+@media (max-width:820px){.hero{padding:40px 0 100px}.portrait::before{display:none}header .bar{padding:12px 20px}.reg form{padding:22px}}
+@media (prefers-reduced-motion:reduce){.steps li,.card{transition:none}}
+
 </style>
 </head>
 <body>
 <header><div class="bar"><a class="logo" href="#top">ADINORA<small>CASTING AGENCY</small></a>
-<nav><a data-i="n1" href="#about">О нас</a><a data-i="n2" href="#base">База</a><a data-i="n3" href="#join">Регистрация</a><a data-i="n4" href="#clients">Клиентам</a><a data-i="n5" href="#contacts">Контакты</a><a class="login" data-i="n6" href="#join">Войти / Регистрация</a></nav><div class="lang" role="group" aria-label="Language"><button data-l="ru">RU</button><button data-l="uz">UZ</button><button data-l="en">EN</button></div></div></header>
+<nav><a data-i="n1" href="#about">О нас</a><a data-i="n2" href="#base">База</a><a data-i="n3" href="#join">Регистрация</a><a data-i="n4" href="#clients">Клиентам</a><a data-i="n5" href="#contacts">Контакты</a><a class="login" id="lgbtn" data-i="n6" href="#join">Войти / Регистрация</a></nav><div class="lang" role="group" aria-label="Language"><button data-l="ru">RU</button><button data-l="uz">UZ</button><button data-l="en">EN</button></div></div></header>
 
 <main id="top">
 <div class="hero"><div class="wrap">
@@ -168,20 +238,29 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 <h2 data-i="bs_t">Наша база</h2>
 <p class="lead" data-i="bs_l">Поиск по имени и категории. Контактные данные скрыты.</p>
 <div class="admbar" id="admbar" hidden><span data-i="d_adm">Режим администратора: видны контакты</span><button class="sm" id="aseed" data-i="ad_seed">Добавить примеры</button><button class="sm" id="aclear" data-i="ad_clear">Очистить базу</button><button class="sm" id="aout" data-i="ad_out">Выйти</button></div>
+<div class="mod" id="mod" hidden><h3><span data-i="mod_t">На проверке</span><b class="bdg" id="mcnt">0</b></h3><div id="modlist"></div></div>
 <div class="tools"><input id="qi" type="search" data-ip="bs_p" placeholder="Поиск по имени и категории…" aria-label="Поиск"><select id="bsel" aria-label="Категория"><option data-i="o0">Все категории</option><option data-i="k1">Модель</option><option data-i="k2">Актёр</option><option data-i="k3">Актриса</option><option data-i="k4">Хостес</option><option data-i="k5">Ведущий</option><option data-i="k6">Другое</option></select></div>
 <p class="cnt" id="cnt"></p><div class="grid3" id="grid"></div>
 <div class="empty" id="emp"><span data-i="bs_e">В базе пока нет анкет. Станьте первым.</span><a href="#join" data-i="bs_a">Заполнить анкету</a></div>
 </div></section>
 
+<section class="cab" id="cab" hidden><div class="wrap">
+<div class="cabtop"><div><h2 data-i="cab_t">Мои анкеты</h2><p class="lead" data-i="cab_l">Здесь ваши анкеты и их статусы. Старая версия остаётся на сайте, пока новая на проверке.</p></div>
+<div class="macts" style="margin:0"><button class="btn" id="cabadd" data-i="cab_add">Добавить анкету</button><button class="sm" id="cabout" data-i="ad_out" style="color:var(--ink)">Выйти</button></div></div>
+<div class="cabgrid" id="cabgrid"></div></div></section>
+
 <section class="reg" id="join"><div class="wrap">
 <div><h2 data-i="rt">Регистрация</h2><p class="lead" data-i="rl">Оставьте основные данные. Остальное мы уточним при личном общении.</p></div>
 <form id="reg" novalidate>
+<div class="edbar" id="edbar" hidden><span id="edname"></span><button type="button" class="sm" id="edcancel" data-i="ad_cancel">Отмена</button></div>
 <label><span data-i="f1">Имя и фамилия</span><input id="fn" type="text" autocomplete="name" maxlength="60"></label>
 <div class="row"><label><span data-i="f2">Телефон</span><input id="fp" type="tel" placeholder="+998" autocomplete="tel" maxlength="20"></label>
 <label><span data-i="f3">Категория</span><select id="fc"><option value="" data-i="o_sel">Выберите категорию</option><option value="k1" data-i="k1">Модель</option><option value="k2" data-i="k2">Актёр</option><option value="k3" data-i="k3">Актриса</option><option value="k4" data-i="k4">Хостес</option><option value="k5" data-i="k5">Ведущий</option><option value="k6" data-i="k6">Другое</option></select></label></div>
 <div class="row"><label><span data-i="f4">Город</span><input id="fcity" type="text" maxlength="40"></label><label><span data-i="f5">Возраст</span><input id="fage" type="number" min="5" max="99" inputmode="numeric"></label></div>
 <label><span data-i="f6">Фото (необязательно)</span><input id="fph" type="file" accept="image/*"></label>
-<button class="btn" type="submit" data-i="snd">Отправить анкету</button>
+<label class="chk"><input type="checkbox" id="fkid"><span data-i="f_kid">Анкета ребёнка (до 18 лет)</span></label>
+<label class="chk" id="consl" hidden><input type="checkbox" id="fcons"><span data-i="f_cons">Я родитель или законный представитель и согласен(на) на публикацию анкеты</span></label>
+<button class="btn" type="submit" id="sbtn" data-i="snd">Отправить анкету</button>
 <p class="ok" id="okm" role="status"></p>
 <p class="note" data-i="nt">Отправляя анкету, вы соглашаетесь на обработку персональных данных.</p>
 <p class="note" data-i="demo">Демо-версия: данные хранятся только в этом браузере.</p>
@@ -202,6 +281,10 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 <a class="row2" href="tel:+998990028834"><span data-i="f2">Телефон</span><b>+998 99 002 88 34</b></a>
 <a class="row2" href="tel:+998503028834"><span data-i="f2">Телефон</span><b>+998 50 302 88 34</b></a>
 </div></div></section>
+<dialog id="ldlg"><form id="lgf"><h3 data-i="lg_t">Вход</h3><p class="note" data-i="lg_l">Введите телефон, указанный в анкете.</p>
+<label><span data-i="f2">Телефон</span><input id="lph" type="tel" placeholder="+998" autocomplete="tel"></label>
+<p class="note" id="lge" role="alert" style="min-height:1.2em"></p><p class="note" data-i="lg_n">В рабочей версии вход будет по коду из SMS.</p>
+<div class="acts"><button class="btn" type="submit" data-i="ad_go">Войти</button><button class="sm" type="button" id="lc" data-i="ad_cancel">Отмена</button></div></form></dialog>
 <dialog id="dlg"><form id="adf"><h3 data-i="ad_t">Вход администратора</h3>
 <label><span data-i="ad_pw">Пароль</span><input id="pw" type="password" autocomplete="current-password"></label>
 <p class="note" id="pwe" role="alert" style="min-height:1.2em"></p>
@@ -211,7 +294,7 @@ footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-
 <footer><div class="wrap"><a class="logo" href="#top">ADINORA<small>CASTING AGENCY</small></a><span data-i="ft">Ташкент</span><button class="lnk" id="aopen" data-i="ad_link">Вход для администратора</button></div></footer>
 
 <script>
-var T={"ru": {}, "uz": {"n1": "Biz haqimizda", "n2": "Baza", "n4": "Mijozlarga", "n5": "Kontaktlar", "n6": "Kirish / Ro‘yxatdan o‘tish", "bs_t": "Bizning baza", "bs_l": "Ism va toifa bo‘yicha qidiruv. Kontakt ma’lumotlari yashirilgan.", "bs_p": "Ism yoki toifa bo‘yicha qidirish…", "bs_e": "Bazada hozircha anketalar yo‘q. Birinchi bo‘ling.", "bs_a": "Anketani to‘ldirish", "n3": "Ro‘yxatdan o‘tish", "h1": "Sizning yuzingiz kadrda bo‘lishi kerak", "hp": "Biz reklama, kino va tadbirlar uchun modellar, aktyorlar, boshlovchilar va xostesslarni tanlaymiz. Anketani to‘ldiring, mos loyiha paydo bo‘lganda siz bilan bog‘lanamiz.", "b1": "Anketani to‘ldirish", "b2": "Qanday ishlaydi", "c1": "Agentlik asoschisi", "c2": "Ism va lavozim", "ct": "Biz kimni izlaymiz", "cl": "Yo‘nalishni tanlang: shunda sizga mos loyihani tezroq taklif qilamiz.", "k1": "Model", "k2": "Aktyor", "k3": "Aktrisa", "k4": "Xostes", "k5": "Boshlovchi", "k6": "Boshqa", "ht": "Bazaga qanday kirish mumkin", "hl": "Uch qadam, bir necha daqiqa kifoya.", "s1t": "Anketa", "s1p": "O‘zingiz haqingizda yozing va yo‘nalishni tanlang.", "s2t": "Suratlar", "s2p": "Portret va to‘liq bo‘yli suratni filtrsiz yuklang.", "s3t": "Taklif", "s3p": "Profilingizga mos loyiha paydo bo‘lganda siz bilan bog‘lanamiz.", "rt": "Ro‘yxatdan o‘tish", "rl": "Asosiy ma’lumotlarni qoldiring. Qolganini shaxsiy suhbatda aniqlaymiz.", "f1": "Ism va familiya", "f2": "Telefon", "f3": "Toifa", "o0": "Barcha toifalar", "snd": "Anketani yuborish", "nt": "Anketani yuborib, shaxsiy ma’lumotlarni qayta ishlashga rozilik bildirasiz.", "ft": "Toshkent", "pr_t": "Loyiha uchun inson izlayapsizmi?", "pr_p": "Reklama, kino, klip, fotosuratlar, taqdimotlar, ko‘rgazmalar, promo va tadbirlar.", "pr_b": "Loyihani muhokama qilish", "cu_t": "Keling, birga yaratamiz.", "cu_l": "Biz bilan qulay usulda bog‘laning.", "f4": "Shahar", "f5": "Yosh", "f6": "Surat (ixtiyoriy)", "o_sel": "Toifani tanlang", "demo": "Demo versiya: ma’lumotlar faqat shu brauzerda saqlanadi.", "ad_link": "Administrator kirishi", "ad_t": "Administrator kirishi", "ad_pw": "Parol", "ad_go": "Kirish", "ad_cancel": "Bekor qilish", "ad_out": "Chiqish", "ad_seed": "Namunalarni qo‘shish", "ad_clear": "Bazani tozalash", "d_adm": "Administrator rejimi: kontaktlar ko‘rinadi", "d_ok": "Anketa yuborildi va bazada paydo bo‘ldi.", "d_req": "Ism, telefon va toifani to‘ldiring.", "d_none": "Hech narsa topilmadi.", "d_found": "Topildi", "d_yr": "yosh", "d_del": "O‘chirish", "d_hide": "Yashirish", "d_show": "Ko‘rsatish", "d_hid": "Yashirin", "d_bad": "Parol noto‘g‘ri", "d_full": "Brauzerda joy yetmadi. Kichikroq surat tanlang."}, "en": {"n1": "About us", "n2": "Database", "n4": "For clients", "n5": "Contacts", "n6": "Log in / Sign up", "bs_t": "Our database", "bs_l": "Search by name and category. Contact details are hidden.", "bs_p": "Search by name or category…", "bs_e": "No profiles in the database yet. Be the first.", "bs_a": "Fill in the form", "n3": "Sign up", "h1": "Your face belongs in the frame", "hp": "We cast models, actors, hosts and hostesses for advertising, film and events. Fill in the form and we will contact you when a suitable project comes up.", "b1": "Fill in the form", "b2": "How it works", "c1": "Agency founder", "c2": "Name and title", "ct": "Who we are looking for", "cl": "Choose a category so we can offer you the right project faster.", "k1": "Model", "k2": "Actor", "k3": "Actress", "k4": "Hostess", "k5": "Host", "k6": "Other", "ht": "How to join our database", "hl": "Three steps, a few minutes in total.", "s1t": "Form", "s1p": "Tell us about yourself and choose a category.", "s2t": "Photos", "s2p": "Upload a portrait and a full-length photo, no filters.", "s3t": "Invitation", "s3p": "We will contact you when a project fits your profile.", "rt": "Sign up", "rl": "Leave your basic details. We will clarify the rest in person.", "f1": "Full name", "f2": "Phone", "f3": "Category", "o0": "All categories", "snd": "Submit form", "nt": "By submitting, you agree to the processing of your personal data.", "ft": "Tashkent", "pr_t": "Looking for someone for your project?", "pr_p": "Advertising, film, music videos, photo shoots, presentations, exhibitions, promo and events.", "pr_b": "Discuss a project", "cu_t": "Let’s create together.", "cu_l": "Contact us in the way that suits you.", "f4": "City", "f5": "Age", "f6": "Photo (optional)", "o_sel": "Choose a category", "demo": "Demo version: data is stored in this browser only.", "ad_link": "Admin login", "ad_t": "Admin login", "ad_pw": "Password", "ad_go": "Log in", "ad_cancel": "Cancel", "ad_out": "Log out", "ad_seed": "Add samples", "ad_clear": "Clear database", "d_adm": "Admin mode: contacts are visible", "d_ok": "Your form was sent and is now in the database.", "d_req": "Fill in name, phone and category.", "d_none": "Nothing found.", "d_found": "Found", "d_yr": "y.o.", "d_del": "Delete", "d_hide": "Hide", "d_show": "Show", "d_hid": "Hidden", "d_bad": "Wrong password", "d_full": "Not enough browser storage. Try a smaller photo."}};
+var T={"ru": {}, "uz": {"n1": "Biz haqimizda", "n2": "Baza", "n4": "Mijozlarga", "n5": "Kontaktlar", "n6": "Kirish / Ro‘yxatdan o‘tish", "bs_t": "Bizning baza", "bs_l": "Ism va toifa bo‘yicha qidiruv. Kontakt ma’lumotlari yashirilgan.", "bs_p": "Ism yoki toifa bo‘yicha qidirish…", "bs_e": "Bazada hozircha anketalar yo‘q. Birinchi bo‘ling.", "bs_a": "Anketani to‘ldirish", "n3": "Ro‘yxatdan o‘tish", "h1": "Sizning yuzingiz kadrda bo‘lishi kerak", "hp": "Biz reklama, kino va tadbirlar uchun modellar, aktyorlar, boshlovchilar va xostesslarni tanlaymiz. Anketani to‘ldiring, mos loyiha paydo bo‘lganda siz bilan bog‘lanamiz.", "b1": "Anketani to‘ldirish", "b2": "Qanday ishlaydi", "c1": "Agentlik asoschisi", "c2": "Ism va lavozim", "ct": "Biz kimni izlaymiz", "cl": "Yo‘nalishni tanlang: shunda sizga mos loyihani tezroq taklif qilamiz.", "k1": "Model", "k2": "Aktyor", "k3": "Aktrisa", "k4": "Xostes", "k5": "Boshlovchi", "k6": "Boshqa", "ht": "Bazaga qanday kirish mumkin", "hl": "Uch qadam, bir necha daqiqa kifoya.", "s1t": "Anketa", "s1p": "O‘zingiz haqingizda yozing va yo‘nalishni tanlang.", "s2t": "Suratlar", "s2p": "Portret va to‘liq bo‘yli suratni filtrsiz yuklang.", "s3t": "Taklif", "s3p": "Profilingizga mos loyiha paydo bo‘lganda siz bilan bog‘lanamiz.", "rt": "Ro‘yxatdan o‘tish", "rl": "Asosiy ma’lumotlarni qoldiring. Qolganini shaxsiy suhbatda aniqlaymiz.", "f1": "Ism va familiya", "f2": "Telefon", "f3": "Toifa", "o0": "Barcha toifalar", "snd": "Anketani yuborish", "nt": "Anketani yuborib, shaxsiy ma’lumotlarni qayta ishlashga rozilik bildirasiz.", "ft": "Toshkent", "pr_t": "Loyiha uchun inson izlayapsizmi?", "pr_p": "Reklama, kino, klip, fotosuratlar, taqdimotlar, ko‘rgazmalar, promo va tadbirlar.", "pr_b": "Loyihani muhokama qilish", "cu_t": "Keling, birga yaratamiz.", "cu_l": "Biz bilan qulay usulda bog‘laning.", "f4": "Shahar", "f5": "Yosh", "f6": "Surat (ixtiyoriy)", "o_sel": "Toifani tanlang", "demo": "Demo versiya: ma’lumotlar faqat shu brauzerda saqlanadi.", "ad_link": "Administrator kirishi", "ad_t": "Administrator kirishi", "ad_pw": "Parol", "ad_go": "Kirish", "ad_cancel": "Bekor qilish", "ad_out": "Chiqish", "ad_seed": "Namunalarni qo‘shish", "ad_clear": "Bazani tozalash", "d_adm": "Administrator rejimi: kontaktlar ko‘rinadi", "d_ok": "Anketa yuborildi va bazada paydo bo‘ldi.", "d_req": "Ism, telefon va toifani to‘ldiring.", "d_none": "Hech narsa topilmadi.", "d_found": "Topildi", "d_yr": "yosh", "d_del": "O‘chirish", "d_hide": "Yashirish", "d_show": "Ko‘rsatish", "d_hid": "Yashirin", "d_bad": "Parol noto‘g‘ri", "d_full": "Brauzerda joy yetmadi. Kichikroq surat tanlang.", "cab_t": "Mening anketalarim", "cab_l": "Bu yerda anketalaringiz va ularning holati. Yangi versiya tekshiruvda bo‘lganda eskisi saytda qoladi.", "cab_add": "Anketa qo‘shish", "lg_t": "Kirish", "lg_l": "Anketada ko‘rsatilgan telefon raqamini kiriting.", "lg_n": "Ishchi versiyada kirish SMS-kod orqali bo‘ladi.", "f_kid": "Bola anketasi (18 yoshgacha)", "f_cons": "Men ota-ona yoki qonuniy vakilman va anketa e’lon qilinishiga roziman", "snd2": "O‘zgarishlarni saqlash", "d_editing": "Tahrirlash:", "mod_t": "Tekshiruvda", "mod_now": "Hozir saytda", "mod_new": "Yangi versiya", "mod_first": "Yangi anketa", "mod_ok": "Tasdiqlash", "mod_no": "Rad etish", "mod_reason": "Rad etish sababi", "mod_empty": "Yangi anketalar yo‘q.", "d_st_review": "Tekshiruvda", "d_st_ok": "Tasdiqlangan", "d_st_rej": "Rad etilgan", "d_n_review": "Tekshiruvga yuborildi. Hozircha saytda avvalgi versiya turibdi.", "d_n_review_new": "Tekshiruvga yuborildi. Tasdiqlangandan keyin saytda paydo bo‘ladi.", "d_n_ok": "Anketa tasdiqlandi va saytda ko‘rinadi.", "d_n_rej": "Rad etildi. Sabab:", "d_edit": "Tahrirlash", "d_saved": "O‘zgarishlar tekshiruvga yuborildi.", "d_sent": "Anketa tekshiruvga yuborildi. Tasdiqlangandan keyin bazada paydo bo‘ladi.", "d_cons": "Ota-onaning roziligini tasdiqlang.", "d_max": "Limit: 5 ta anketa.", "d_confirm": "Anketani o‘chirasizmi?", "d_nophone": "Telefonni kiriting.", "d_nfound": "Bu raqam bo‘yicha anketa topilmadi. Quyida anketani to‘ldiring.", "d_kidtag": "Bola", "d_now": "Hozir saytda:"}, "en": {"n1": "About us", "n2": "Database", "n4": "For clients", "n5": "Contacts", "n6": "Log in / Sign up", "bs_t": "Our database", "bs_l": "Search by name and category. Contact details are hidden.", "bs_p": "Search by name or category…", "bs_e": "No profiles in the database yet. Be the first.", "bs_a": "Fill in the form", "n3": "Sign up", "h1": "Your face belongs in the frame", "hp": "We cast models, actors, hosts and hostesses for advertising, film and events. Fill in the form and we will contact you when a suitable project comes up.", "b1": "Fill in the form", "b2": "How it works", "c1": "Agency founder", "c2": "Name and title", "ct": "Who we are looking for", "cl": "Choose a category so we can offer you the right project faster.", "k1": "Model", "k2": "Actor", "k3": "Actress", "k4": "Hostess", "k5": "Host", "k6": "Other", "ht": "How to join our database", "hl": "Three steps, a few minutes in total.", "s1t": "Form", "s1p": "Tell us about yourself and choose a category.", "s2t": "Photos", "s2p": "Upload a portrait and a full-length photo, no filters.", "s3t": "Invitation", "s3p": "We will contact you when a project fits your profile.", "rt": "Sign up", "rl": "Leave your basic details. We will clarify the rest in person.", "f1": "Full name", "f2": "Phone", "f3": "Category", "o0": "All categories", "snd": "Submit form", "nt": "By submitting, you agree to the processing of your personal data.", "ft": "Tashkent", "pr_t": "Looking for someone for your project?", "pr_p": "Advertising, film, music videos, photo shoots, presentations, exhibitions, promo and events.", "pr_b": "Discuss a project", "cu_t": "Let’s create together.", "cu_l": "Contact us in the way that suits you.", "f4": "City", "f5": "Age", "f6": "Photo (optional)", "o_sel": "Choose a category", "demo": "Demo version: data is stored in this browser only.", "ad_link": "Admin login", "ad_t": "Admin login", "ad_pw": "Password", "ad_go": "Log in", "ad_cancel": "Cancel", "ad_out": "Log out", "ad_seed": "Add samples", "ad_clear": "Clear database", "d_adm": "Admin mode: contacts are visible", "d_ok": "Your form was sent and is now in the database.", "d_req": "Fill in name, phone and category.", "d_none": "Nothing found.", "d_found": "Found", "d_yr": "y.o.", "d_del": "Delete", "d_hide": "Hide", "d_show": "Show", "d_hid": "Hidden", "d_bad": "Wrong password", "d_full": "Not enough browser storage. Try a smaller photo.", "cab_t": "My profiles", "cab_l": "Your profiles and their statuses. The old version stays on the site while the new one is under review.", "cab_add": "Add a profile", "lg_t": "Log in", "lg_l": "Enter the phone number from your profile.", "lg_n": "In the live version, login will use an SMS code.", "f_kid": "Child profile (under 18)", "f_cons": "I am a parent or legal guardian and agree to publish this profile", "snd2": "Save changes", "d_editing": "Editing:", "mod_t": "Under review", "mod_now": "Currently on the site", "mod_new": "New version", "mod_first": "New profile", "mod_ok": "Approve", "mod_no": "Reject", "mod_reason": "Reason for rejection", "mod_empty": "No new profiles.", "d_st_review": "Under review", "d_st_ok": "Approved", "d_st_rej": "Rejected", "d_n_review": "Sent for review. The previous version stays on the site for now.", "d_n_review_new": "Sent for review. It will appear on the site once approved.", "d_n_ok": "Approved and visible on the site.", "d_n_rej": "Rejected. Reason:", "d_edit": "Edit", "d_saved": "Changes sent for review.", "d_sent": "Profile sent for review. It will appear in the database once approved.", "d_cons": "Please confirm parental consent.", "d_max": "Limit reached: 5 profiles.", "d_confirm": "Delete this profile?", "d_nophone": "Enter a phone number.", "d_nfound": "No profiles found for this number. Fill in the form below.", "d_kidtag": "Child", "d_now": "Currently on the site:"}};
 var LS=null;try{LS=window.localStorage}catch(e){}
 function setLang(l){
  var d=(l==='ru')?null:T[l];
@@ -237,59 +320,142 @@ document.querySelectorAll('#cats .cat').forEach(function(b,i){b.addEventListener
 </script>
 <script>
 (function(){
-var R={k1:'Модель',k2:'Актёр',k3:'Актриса',k4:'Хостес',k5:'Ведущий',k6:'Другое',d_ok:'Анкета отправлена и уже в базе.',d_req:'Заполните имя, телефон и категорию.',d_none:'Ничего не найдено.',d_found:'Найдено',d_yr:'лет',d_del:'Удалить',d_hide:'Скрыть',d_show:'Показать',d_hid:'Скрыта',d_bad:'Неверный пароль',d_full:'Не хватило места в браузере. Попробуйте фото поменьше.'};
-var PASS='adinora2026',KEY='adinora-profiles',mem=[];
+var R={k1:'Модель',k2:'Актёр',k3:'Актриса',k4:'Хостес',k5:'Ведущий',k6:'Другое',f1:'Имя и фамилия',f3:'Категория',f4:'Город',f5:'Возраст',snd:'Отправить анкету',snd2:'Сохранить изменения',
+d_none:'Ничего не найдено.',d_found:'Найдено',d_yr:'лет',d_del:'Удалить',d_hide:'Скрыть',d_show:'Показать',d_hid:'Скрыта',d_bad:'Неверный пароль',d_full:'Не хватило места в браузере. Попробуйте фото поменьше.',d_req:'Заполните имя, телефон и категорию.',
+d_st_review:'На проверке',d_st_ok:'Одобрено',d_st_rej:'Отклонено',d_n_review:'Отправлено на проверку. Пока на сайте остаётся прежняя версия.',d_n_review_new:'Отправлено на проверку. На сайте появится после одобрения.',d_n_ok:'Анкета одобрена и видна на сайте.',d_n_rej:'Отклонено. Причина:',d_edit:'Изменить',d_saved:'Изменения отправлены на проверку.',d_sent:'Анкета отправлена на проверку. После одобрения она появится в базе.',d_cons:'Подтвердите согласие родителя.',d_max:'Достигнут лимит: 5 анкет.',d_confirm:'Удалить анкету?',d_nophone:'Введите телефон.',d_nfound:'Анкет с этим номером нет. Заполните анкету ниже.',d_kidtag:'Ребёнок',d_now:'Сейчас на сайте:',d_editing:'Редактирование:',
+mod_now:'Сейчас на сайте',mod_new:'Новая версия',mod_first:'Новая анкета',mod_ok:'Одобрить',mod_no:'Отклонить',mod_reason:'Причина отклонения',mod_empty:'Новых анкет нет.'};
+var PH='ac89958b278f8b624422e05648973c564aeeb2d0218d12bace61ac853a14f61f',PS='adinora-salt-v1',KEY='adinora-v2',UK='adinora-user',mem=[],uMem='',editId=null;
 function tr(k){var l=document.documentElement.lang;return(l!=='ru'&&T[l]&&T[l][k])||R[k]||k}
+async function hashPw(p){var k=await crypto.subtle.importKey('raw',new TextEncoder().encode(p),'PBKDF2',false,['deriveBits']);var b=await crypto.subtle.deriveBits({name:'PBKDF2',salt:new TextEncoder().encode(PS),iterations:200000,hash:'SHA-256'},k,256);return Array.from(new Uint8Array(b)).map(function(x){return x.toString(16).padStart(2,'0')}).join('')}
 function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return mem}}
 function save(a){mem=a;try{localStorage.setItem(KEY,JSON.stringify(a));return true}catch(e){return false}}
-function isAdm(){try{return sessionStorage.getItem('adinora-admin')==='1'}catch(e){return window.__adm===true}}
-function setAdm(v){window.__adm=v;try{v?sessionStorage.setItem('adinora-admin','1'):sessionStorage.removeItem('adinora-admin')}catch(e){}}
+function getU(){try{return localStorage.getItem(UK)||''}catch(e){return uMem}}
+function setU(v){uMem=v;try{v?localStorage.setItem(UK,v):localStorage.removeItem(UK)}catch(e){}}
+function isAdm(){try{return sessionStorage.getItem('adinora-admin')===PH}catch(e){return window.__adm===true}}
+function setAdm(v){window.__adm=v;try{v?sessionStorage.setItem('adinora-admin',PH):sessionStorage.removeItem('adinora-admin')}catch(e){}}
 var $=function(i){return document.getElementById(i)};
 function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
-function render(){
+function dg(s){return String(s).replace(/\D/g,'')}
+function ph(src,name,cls){var d=el('div',cls||'ph');if(src&&src.indexOf('data:image/')===0){var im=new Image();im.src=src;im.alt=name||'';d.appendChild(im)}else d.textContent=(name||'?').trim().charAt(0).toUpperCase();return d}
+function byId(id){return load().filter(function(p){return p.id===id})[0]}
+function mutate(id,fn){var a=load();a.forEach(function(p){if(p.id===id)fn(p)});save(a)}
+function renderBase(){
  var all=load(),adm=isAdm(),q=$('qi').value.trim().toLowerCase(),c=$('bsel').selectedIndex,g=$('grid');
- var pub=all.filter(function(p){return adm||!p.hidden});
- var list=pub.filter(function(p){
-  if(c>0&&p.cat!=='k'+c)return false;
-  if(q){var h=(p.name+' '+p.city+' '+tr(p.cat)+(adm?' '+p.phone:'')).toLowerCase();if(h.indexOf(q)<0)return false}
-  return true}).reverse();
  $('admbar').hidden=!adm;
+ var pub=all.filter(function(p){return p.pub&&(adm||!p.hidden)});
+ var list=pub.filter(function(p){var d=p.pub;
+  if(c>0&&d.cat!=='k'+c)return false;
+  if(q){var h=(d.name+' '+(d.kid&&!adm?'':d.city)+' '+tr(d.cat)+(adm?' '+p.phone:'')).toLowerCase();if(h.indexOf(q)<0)return false}
+  return true}).reverse();
  $('emp').style.display=pub.length?'none':'flex';
  $('cnt').textContent=pub.length?(list.length?tr('d_found')+': '+list.length:tr('d_none')):'';
  g.innerHTML='';
  list.forEach(function(p){
-  var cd=el('article','card'+(p.hidden?' off':'')),ph=el('div','ph');
-  if(p.photo&&p.photo.indexOf('data:image/')===0){var im=new Image();im.src=p.photo;im.alt=p.name;ph.appendChild(im)}else ph.textContent=(p.name||'?').trim().charAt(0).toUpperCase();
-  var b=el('div','cb');b.appendChild(el('h3','',p.name));
-  b.appendChild(el('div','m',[tr(p.cat),p.city,p.age?p.age+' '+tr('d_yr'):''].filter(Boolean).join(' · ')));
-  if(adm){var a=el('div','adm');a.appendChild(el('span','',p.phone+(p.hidden?'  ('+tr('d_hid')+')':'')));var r=el('div');
-   var h=el('button','sm',p.hidden?tr('d_show'):tr('d_hide'));h.onclick=function(){var x=load();x.forEach(function(y){if(y.id===p.id)y.hidden=!y.hidden});save(x);render()};
-   var d=el('button','sm',tr('d_del'));d.onclick=function(){save(load().filter(function(y){return y.id!==p.id}));render()};
-   r.appendChild(h);r.appendChild(d);a.appendChild(r);b.appendChild(a)}
-  cd.appendChild(ph);cd.appendChild(b);g.appendChild(cd)});
+  var d=p.pub,kid=d.kid&&!adm,nm=kid?d.name.split(' ')[0]:d.name;
+  var cd=el('article','card'+(p.hidden?' off':'')),b=el('div','cb');
+  b.appendChild(el('h3','',nm));
+  b.appendChild(el('div','m',[tr(d.cat),kid?'':d.city,d.age?d.age+' '+tr('d_yr'):''].filter(Boolean).join(' · ')));
+  if(adm){var a=el('div','adm');a.appendChild(el('span','',p.phone+(p.hidden?'  ('+tr('d_hid')+')':'')+(d.kid?'  · '+tr('d_kidtag'):'')));var r=el('div');
+   var h=el('button','sm',p.hidden?tr('d_show'):tr('d_hide'));h.onclick=function(){mutate(p.id,function(y){y.hidden=!y.hidden});renderAll()};
+   var x=el('button','sm',tr('d_del'));x.onclick=function(){save(load().filter(function(y){return y.id!==p.id}));renderAll()};
+   r.appendChild(h);r.appendChild(x);a.appendChild(r);b.appendChild(a)}
+  cd.appendChild(ph(d.photo,nm));cd.appendChild(b);g.appendChild(cd)});
 }
-window.__render=render;
+function side(d,old,title,isNew){
+ var s=el('div','sd'+(isNew?' nw':'')),row=el('div','sr'),f=el('div','sf');
+ s.appendChild(el('div','sl',title));
+ var p=ph(d.photo,d.name,'sp');if(old&&old.photo!==d.photo)p.classList.add('chg');row.appendChild(p);
+ [['f1','name'],['f3','cat'],['f4','city'],['f5','age']].forEach(function(x){
+  var v=x[1]==='cat'?tr(d.cat):d[x[1]],ln=el('div','ln'+(old&&old[x[1]]!==d[x[1]]?' chg':''));
+  ln.appendChild(el('span','',tr(x[0])));ln.appendChild(el('b','',v||'—'));f.appendChild(ln)});
+ if(d.kid)f.appendChild(el('span','tag',tr('d_kidtag')));
+ row.appendChild(f);s.appendChild(row);return s}
+function renderMod(){
+ var adm=isAdm();$('mod').hidden=!adm;if(!adm)return;
+ var q=load().filter(function(p){return p.state==='review'&&p.pend}),box=$('modlist');
+ $('mcnt').textContent=q.length;box.innerHTML='';
+ if(!q.length){box.appendChild(el('p','cnt',tr('mod_empty')));return}
+ q.forEach(function(p){
+  var it=el('div','mi'),hd=el('div','mh'),cmp=el('div','cmp'+(p.pub?'':' one'));
+  hd.appendChild(el('b','',p.phone));hd.appendChild(el('span','',p.pub?tr('mod_new'):tr('mod_first')));it.appendChild(hd);
+  if(p.pub)cmp.appendChild(side(p.pub,null,tr('mod_now'),false));
+  cmp.appendChild(side(p.pend,p.pub,p.pub?tr('mod_new'):tr('mod_first'),true));it.appendChild(cmp);
+  var ac=el('div','macts'),rs=el('input');rs.type='text';rs.placeholder=tr('mod_reason');rs.maxLength=120;
+  var ok=el('button','btn',tr('mod_ok')),no=el('button','sm',tr('mod_no'));
+  ok.onclick=function(){mutate(p.id,function(y){y.pub=y.pend;y.pend=null;y.state='ok';y.reason=''});renderAll()};
+  no.onclick=function(){if(!rs.value.trim()){rs.focus();return}mutate(p.id,function(y){y.state='rejected';y.reason=rs.value.trim()});renderAll()};
+  ac.appendChild(ok);ac.appendChild(rs);ac.appendChild(no);it.appendChild(ac);box.appendChild(it)});
+}
+function renderCab(){
+ var u=getU(),cab=$('cab');cab.hidden=!u;if(!u)return;
+ var mine=load().filter(function(p){return p.owner===u}),g=$('cabgrid');g.innerHTML='';
+ $('cabadd').disabled=mine.length>=5;
+ mine.forEach(function(p){
+  var d=p.pend||p.pub,cd=el('div','cc'),b=el('div');
+  cd.appendChild(ph(d.photo,d.name));
+  var top=el('div');top.style.cssText='display:flex;justify-content:space-between;gap:8px;align-items:flex-start';
+  top.appendChild(el('h3','',d.name));
+  var cls=p.state==='ok'?'ok':p.state==='rejected'?'rej':'review';
+  top.appendChild(el('span','st '+cls,tr(cls==='ok'?'d_st_ok':cls==='rej'?'d_st_rej':'d_st_review')));b.appendChild(top);
+  var nt=p.state==='ok'?tr('d_n_ok'):p.state==='rejected'?tr('d_n_rej')+' '+p.reason:(p.pub?tr('d_n_review'):tr('d_n_review_new'));
+  b.appendChild(el('div','nt',nt));
+  if(p.pub&&p.pend)b.appendChild(el('div','nt',tr('d_now')+' '+p.pub.name));
+  var ac=el('div','acts'),e=el('button','sm',tr('d_edit')),x=el('button','sm',tr('d_del'));
+  e.onclick=function(){startEdit(p.id)};
+  x.onclick=function(){if(confirm(tr('d_confirm'))){save(load().filter(function(y){return y.id!==p.id}));if(editId===p.id)resetForm();renderAll()}};
+  ac.appendChild(e);ac.appendChild(x);b.appendChild(ac);cd.appendChild(b);g.appendChild(cd)});
+}
+function renderAll(){renderBase();renderMod();renderCab();var p=editId&&byId(editId);if(p){var d=p.pend||p.pub;$('edname').textContent=tr('d_editing')+' '+d.name}}
+window.__render=renderAll;
+function setBtn(){var b=$('sbtn'),k=editId?'snd2':'snd';b.setAttribute('data-i',k);b.setAttribute('data-ru',R[k]);b.textContent=tr(k)}
+function applyUser(){var u=getU();if(u){if(!$('fp').value)$('fp').value='+'+u;$('fp').readOnly=true}else $('fp').readOnly=false}
+function resetForm(){editId=null;$('reg').reset();$('edbar').hidden=true;$('consl').hidden=true;var u=getU();$('fp').value=u?'+'+u:'';applyUser();setBtn()}
+function startEdit(id){var p=byId(id),d=p.pend||p.pub;editId=id;
+ $('fn').value=d.name;$('fp').value=p.phone;$('fc').value=d.cat;$('fcity').value=d.city||'';$('fage').value=d.age||'';$('fph').value='';
+ $('fkid').checked=!!d.kid;$('consl').hidden=!d.kid;$('fcons').checked=!!d.kid;$('fp').readOnly=true;$('okm').textContent='';
+ $('edbar').hidden=false;$('edname').textContent=tr('d_editing')+' '+d.name;setBtn();$('join').scrollIntoView({behavior:'smooth'})}
 function readPhoto(f,cb){if(!f){cb('');return}var fr=new FileReader();fr.onload=function(){var im=new Image();im.onload=function(){var s=Math.min(1,480/Math.max(im.width,im.height)),cv=document.createElement('canvas');cv.width=Math.round(im.width*s);cv.height=Math.round(im.height*s);cv.getContext('2d').drawImage(im,0,0,cv.width,cv.height);cb(cv.toDataURL('image/jpeg',.75))};im.onerror=function(){cb('')};im.src=fr.result};fr.onerror=function(){cb('')};fr.readAsDataURL(f)}
+$('fkid').addEventListener('change',function(){$('consl').hidden=!$('fkid').checked});
+$('edcancel').onclick=function(){resetForm();$('okm').textContent=''};
 $('reg').addEventListener('submit',function(e){
- e.preventDefault();var n=$('fn').value.trim(),p=$('fp').value.trim(),c=$('fc').value,ok=$('okm');
- if(!n||!p||!c){ok.textContent=tr('d_req');return}
+ e.preventDefault();var n=$('fn').value.trim(),raw=$('fp').value.trim(),ph10=dg(raw),c=$('fc').value,kid=$('fkid').checked,ok=$('okm');
+ if(!n||ph10.length<7||!c){ok.textContent=tr('d_req');return}
+ if(kid&&!$('fcons').checked){ok.textContent=tr('d_cons');return}
+ var a=load(),cur=editId?a.filter(function(p){return p.id===editId})[0]:null;
+ if(!cur&&a.filter(function(p){return p.owner===ph10}).length>=5){ok.textContent=tr('d_max');return}
  readPhoto($('fph').files[0],function(photo){
-  var a=load();a.push({id:Date.now()+''+Math.floor(Math.random()*1e4),name:n,phone:p,cat:c,city:$('fcity').value.trim(),age:$('fage').value.trim(),photo:photo,hidden:false});
-  if(!save(a)){a.pop();mem=a;ok.textContent=tr('d_full');return}
-  $('reg').reset();ok.textContent=tr('d_ok');$('qi').value='';$('bsel').selectedIndex=0;render();
-  setTimeout(function(){$('base').scrollIntoView({behavior:'smooth'})},700);
- });
+  var old=cur?(cur.pend||cur.pub):null;
+  var d={name:n,cat:c,city:$('fcity').value.trim(),age:$('fage').value.trim(),kid:kid,photo:photo||(old?old.photo:'')};
+  if(cur){cur.pend=d;cur.state='review';cur.reason=''}
+  else a.push({id:Date.now()+''+Math.floor(Math.random()*1e4),owner:ph10,phone:raw,pub:null,pend:d,state:'review',reason:'',hidden:false});
+  if(!save(a)){ok.textContent=tr('d_full');return}
+  var msg=cur?tr('d_saved'):tr('d_sent');setU(ph10);resetForm();ok.textContent=msg;renderAll();
+  setTimeout(function(){$('cab').scrollIntoView({behavior:'smooth'})},500)});
 });
-$('qi').addEventListener('input',render);$('bsel').addEventListener('change',render);
-var dlg=$('dlg');
+$('qi').addEventListener('input',renderBase);$('bsel').addEventListener('change',renderBase);
+var ld=$('ldlg'),dlg=$('dlg');
+$('lgbtn').addEventListener('click',function(e){e.preventDefault();if(getU())$('cab').scrollIntoView({behavior:'smooth'});else{$('lph').value='';$('lge').textContent='';ld.showModal();$('lph').focus()}});
+$('lc').onclick=function(){ld.close()};
+$('lgf').addEventListener('submit',function(e){e.preventDefault();var p=dg($('lph').value);
+ if(p.length<7){$('lge').textContent=tr('d_nophone');return}
+ if(!load().some(function(x){return x.owner===p})){$('lge').textContent=tr('d_nfound');return}
+ setU(p);ld.close();resetForm();renderAll();$('cab').scrollIntoView({behavior:'smooth'})});
+$('cabout').onclick=function(){setU('');resetForm();renderAll()};
+$('cabadd').onclick=function(){resetForm();$('okm').textContent='';$('join').scrollIntoView({behavior:'smooth'})};
 $('aopen').onclick=function(){$('pw').value='';$('pwe').textContent='';dlg.showModal();$('pw').focus()};
 $('dc').onclick=function(){dlg.close()};
-$('adf').addEventListener('submit',function(e){e.preventDefault();if($('pw').value===PASS){setAdm(true);dlg.close();render()}else $('pwe').textContent=tr('d_bad')});
-$('aout').onclick=function(){setAdm(false);render()};
-$('aclear').onclick=function(){save([]);render()};
-$('aseed').onclick=function(){var S=[['Алина Каримова','+998 90 000 00 01','k1','Ташкент','24'],['Тимур Расулов','+998 90 000 00 02','k2','Самарканд','29'],['Мадина Саидова','+998 90 000 00 03','k3','Ташкент','27'],['Рустам Хасанов','+998 90 000 00 04','k5','Бухара','33'],['Дилноза Юсупова','+998 90 000 00 05','k4','Ташкент','22']],a=load();
- S.forEach(function(x,i){a.push({id:'s'+Date.now()+i,name:x[0],phone:x[1],cat:x[2],city:x[3],age:x[4],photo:'',hidden:false})});save(a);render()};
-render();
+$('adf').addEventListener('submit',async function(e){e.preventDefault();var ok=false;try{ok=(await hashPw($('pw').value))===PH}catch(x){}if(ok){setAdm(true);dlg.close();renderAll();if(load().some(function(p){return p.state==='review'}))$('mod').scrollIntoView({behavior:'smooth'})}else $('pwe').textContent=tr('d_bad')});
+$('aout').onclick=function(){setAdm(false);renderAll()};
+$('aclear').onclick=function(){save([]);renderAll()};
+$('aseed').onclick=function(){
+ var S=[['Алина Каримова','+998 90 000 00 01','k1','Ташкент','24'],['Тимур Расулов','+998 90 000 00 02','k2','Самарканд','29'],['Мадина Саидова','+998 90 000 00 03','k3','Ташкент','27'],['Рустам Хасанов','+998 90 000 00 04','k5','Бухара','33'],['Дилноза Юсупова','+998 90 000 00 05','k4','Ташкент','22']],a=load(),t=Date.now();
+ S.forEach(function(x,i){var d={name:x[0],cat:x[2],city:x[3],age:x[4],kid:false,photo:''};
+  var p={id:'s'+t+i,owner:dg(x[1]),phone:x[1],pub:d,pend:null,state:'ok',reason:'',hidden:false};
+  if(i===0){p.pend={name:x[0],cat:x[2],city:'Самарканд',age:'25',kid:false,photo:''};p.state='review'}
+  a.push(p)});
+ a.push({id:'s'+t+'k',owner:'998900000006',phone:'+998 90 000 00 06',pub:null,pend:{name:'Амира Алиева',cat:'k1',city:'Ташкент',age:'9',kid:true,photo:''},state:'review',reason:'',hidden:false});
+ save(a);renderAll()};
+applyUser();setBtn();renderAll();
 })();
 </script>
 <script>
